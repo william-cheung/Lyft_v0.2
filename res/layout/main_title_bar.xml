@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/title_bar_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/title_bar_bg"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/lyft_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/lyft_logo" 
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4" />
+
+    
+    <ImageButton
+        android:id="@+id/change_role_button"
+        android:contentDescription="@string/plus_button_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginRight="15dp"
+        android:background="#F5F5F5"
+        android:src="@drawable/driver_mode" />
+
+    <ImageButton
+        android:id="@+id/plus_button"
+        android:contentDescription="@string/plus_button_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginRight="15dp"
+        android:background="#F5F5F5"
+        android:src="@drawable/plus_icon" />
+
+</LinearLayout>

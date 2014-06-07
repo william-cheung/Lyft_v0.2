@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:background="#FFFFFF">
+
+    <RelativeLayout
+        android:id="@+id/user_basic_info"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:layout_weight="1.23"
+        android:background="@drawable/imageview_layer_list" >
+
+        <ImageView
+            android:id="@+id/user_photo"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/imageview_layer_list"
+            android:contentDescription="@string/photo_of_user"
+            android:src="@drawable/beautiful_girl3" />
+
+        <RatingBar
+            android:id="@+id/ratingBar1"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/user_name"
+            android:layout_below="@+id/user_name"
+            android:layout_marginTop="10dp"
+            android:rating="4.9" />
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/user_photo"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/user_photo"
+            android:shadowColor="#DCDCDC"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:text="Kristen Stewart"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <ImageButton
+            android:id="@+id/edit_button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#FFFFFFFF"
+            android:src="@drawable/edit_button_src_selector" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/mileage_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:layout_weight="0.34"
+        android:background="@drawable/imageview_layer_list"
+        android:orientation="horizontal" >
+        
+        <ImageView
+            android:id="@+id/more_about_mileage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:background="#FFFFFFFF"
+            android:src="@drawable/coin_icon" />
+
+        <TextView
+            android:id="@+id/mileage_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:shadowColor="#DCDCDC"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:text="里程币 "
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/mileage_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:shadowColor="#DCDCDC"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:text="20000"
+            android:textColor="#1C33B5"
+            android:textSize="18sp" />
+
+        <View
+            android:id="@+id/blank_space"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.55" />
+
+        <ImageView
+            android:id="@+id/more_about_mileage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="12dp"
+            android:background="#FFFFFFFF"
+            android:src="@drawable/more_icon" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.6" />
+
+    <Button
+        android:id="@+id/becdriver_next_button"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_bg_selector"
+        android:gravity="center"
+        android:shadowColor="#DCDCDC"
+        android:shadowDx="0"
+        android:shadowDy="1"
+        android:shadowRadius="1"
+        android:text="登 记 司 机 信 息"
+        android:textColor="@drawable/button_text_color_selector"
+        android:textSize="20sp" />
+    
+     <View
+         android:id="@+id/view2"
+         android:layout_width="wrap_content"
+         android:layout_height="0dp"
+         android:layout_weight="0.5" />
+
+</LinearLayout>

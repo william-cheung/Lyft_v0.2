@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/driver_map_layout"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true" >
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/driver_mapview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
+
+    <ImageButton
+        android:id="@+id/driver_locate_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dip"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/button_bg_selector"
+        android:contentDescription="@string/gps_icon"
+        android:src="@drawable/locate_button_src_selector" />
+
+</RelativeLayout>
