@@ -59,7 +59,9 @@ public class NormalModeFragment extends MapFragment {
 				animateToCurrentLocation();
 			}
 		});
-
+		
+		initDriverInfoPanel();
+		
 		return view;
 	}
 
@@ -95,6 +97,36 @@ public class NormalModeFragment extends MapFragment {
 		});
 		requestDialog = builder.setView(layout).show();
 	}
+	
+	@SuppressWarnings("deprecation")
+	private void initDriverInfoPanel() {
+		LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
+		View layout = layoutInflater.inflate(R.layout.driver_info_panel, null);
+		driverInfoPanel  = new PopupWindow(layout, LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
+		driverInfoPanel.setTouchable(true);
+		driverInfoPanel.setOutsideTouchable(true);
+		driverInfoPanel.setBackgroundDrawable(new BitmapDrawable());
+		driverInfoPanel.setAnimationStyle(R.style.PopupWindowAnim3);
+		
+		View closePanelButton = layout.findViewById(R.id.close_info_panel_button);
+		closePanelButton.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {	
+				if (driverInfoPanel != null) {
+					driverInfoPanel.dismiss();
+				}
+			}
+		});
+		
+		View startPaymentButton = layout.findViewById(R.id.start_payment_button);
+		startPaymentButton.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {	
+				startActivity(new Intent(getActivity(), PaymentActivity.class));
+				if (driverInfoPanel != null) {
+					driverInfoPanel.dismiss();
+				}
+			}
+		});
+	}
 
 	private void closeInputMethod() {
 		InputMethodManager inputMethodManager = (InputMethodManager) getActivity()
@@ -113,32 +145,12 @@ public class NormalModeFragment extends MapFragment {
 		public void onTap() {
 			// TODO
 			System.out.println("Tap from " + userid);
-			showPopupWindow();
+			driverInfoPanel.showAtLocation(getView().findViewById(R.id.fragment_passenger_layout), 
+					Gravity.BOTTOM, 5, 5);
 		}
 	}
 	
-	@SuppressWarnings("deprecation")
-	private void showPopupWindow() {
-		LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
-		View layout = layoutInflater.inflate(R.layout.driver_info_panel, null);
-		driverInfoPanel  = new PopupWindow(layout, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-		driverInfoPanel.setTouchable(true);
-		driverInfoPanel.setOutsideTouchable(true);
-		driverInfoPanel.setBackgroundDrawable(new BitmapDrawable());
-		driverInfoPanel.setAnimationStyle(R.style.PopupWindowAnim3);
-		driverInfoPanel.showAtLocation(getView().findViewById(R.id.fragment_passenger_layout), Gravity.BOTTOM, 5, 5);
-		System.out.println("Show PopupWindow");
-		
-		View startPaymentButton = layout.findViewById(R.id.start_payment_button);
-		startPaymentButton.setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {	
-				startActivity(new Intent(getActivity(), PaymentActivity.class));
-				if (driverInfoPanel != null) {
-					driverInfoPanel.dismiss();
-				}
-			}
-		});
-	}
+
 
 	public class RequestThread extends Thread {
 		public boolean isStoped = false;
